@@ -1,0 +1,102 @@
+<html>
+<body>
+  <head>
+    <style>
+      .layout
+      {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+      }
+      .arm1
+      {
+        position: absolute;
+        top: 90px;
+        left: 180px;
+      }
+      .arm2
+      {
+        position: absolute;
+        top: 90px;
+        left: 500px;
+      }
+      .arm3
+      {
+        position: absolute;
+        top: 255px;
+        left: 840px;
+      }
+    </style>
+  </head>
+<img class="layout" src="{{ layout_image }}" alt="Layout">
+<img id="arm1swap" class="arm1" src="{{ arm1_image}}" alt="Armature one" style="width:64px;height:64px;">
+<img id="arm2swap" class="arm2" src="{{ arm2_image }}" alt="Armature two" style="width:64px;height:64px;">
+<img id="arm3swap" class="arm3" src="{{ arm3_image }}" alt="Armature three" style="width:64px;height:64px;">
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+<label for="armature_one">Armature one status: </label>
+<select name="armature_one" id="armature_one" onChange="swapArm1()">
+  <option value="/static/IMG/noDevice.png">Device not found</option>
+  <option value="/static/IMG/okDevice.png">Device connected and working</option>
+  <option value="/static/IMG/lostDevice.png">Device previously connected, now lost</option>
+  <option value="/static/IMG/failArm.png">Armature failure</option>
+  <option value="/static/IMG/test.png">Test status</option>
+  <option value="/static/IMG/failBat.png">Battery failure</option>
+  <option value="/static/IMG/lowBat.png">Battery low</option>
+</select>
+  <br><br>
+  
+<label for="armature_two">Armature two status: </label>
+<select name="armature_two" id="armature_two" onChange="swapArm2()">
+  <option value="/static/IMG/noDevice.png">Device not found</option>
+  <option value="/static/IMG/okDevice.png">Device connected and working</option>
+  <option value="/static/IMG/lostDevice.png">Device previously connected, now lost</option>
+  <option value="/static/IMG/failArm.png">Armature failure</option>
+  <option value="/static/IMG/test.png">Test status</option>
+  <option value="/static/IMG/failBat.png">Battery failure</option>
+  <option value="/static/IMG/lowBat.png">Battery low</option>
+</select>
+  <br><br>
+
+<label for="armature_three">Armature three status: </label>
+<select name="armature_three" id="armature_three" onChange="swapArm3()">
+  <option value="/static/IMG/noDevice.png">Device not found</option>
+  <option value="/static/IMG/okDevice.png">Device connected and working</option>
+  <option value="/static/IMG/lostDevice.png">Device previously connected, now lost</option>
+  <option value="/static/IMG/failArm.png">Armature failure</option>
+  <option value="/static/IMG/test.png">Test status</option>
+  <option value="/static/IMG/failBat.png">Battery failure</option>
+  <option value="/static/IMG/lowBat.png">Battery low</option>
+</select>
+  <br><br>
+   
+<script type="text/javascript">
+  function swapArm1()
+  {
+    var image = document.getElementById("arm1swap");
+    var dropd = document.getElementById("armature_one");
+    image.src = dropd.value;	
+  };
+</script>
+
+<script type="text/javascript">
+  function swapArm2()
+  {
+    var image = document.getElementById("arm2swap");
+    var dropd = document.getElementById("armature_two");
+    image.src = dropd.value;	
+  };
+</script>
+
+<script type="text/javascript">
+  function swapArm3()
+  {
+    var image = document.getElementById("arm3swap");
+    var dropd = document.getElementById("armature_three");
+    image.src = dropd.value;	
+  };
+</script>
+
+</body>
+</html>
